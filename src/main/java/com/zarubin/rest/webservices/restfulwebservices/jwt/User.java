@@ -1,17 +1,17 @@
 package com.zarubin.rest.webservices.restfulwebservices.jwt;
-
 import javax.persistence.*;
 
 @Entity
+@Table(name = "usr")
 public class User {
 
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue
     private Long id;
 
-    @Column(nullable = false, unique = true)
+    @Column
     private String username;
 
     public Long getId() {

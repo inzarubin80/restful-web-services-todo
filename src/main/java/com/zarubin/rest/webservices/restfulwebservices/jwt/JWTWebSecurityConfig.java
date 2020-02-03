@@ -25,6 +25,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class JWTWebSecurityConfig extends WebSecurityConfigurerAdapter {
 
+
     @Autowired
     private JwtUnAuthorizedResponseAuthenticationEntryPoint jwtUnAuthorizedResponseAuthenticationEntryPoint;
 
@@ -80,6 +81,7 @@ public class JWTWebSecurityConfig extends WebSecurityConfigurerAdapter {
             .cacheControl(); //disable caching
     }
 
+
     @Override
     public void configure(WebSecurity webSecurity) throws Exception {
         webSecurity
@@ -88,6 +90,10 @@ public class JWTWebSecurityConfig extends WebSecurityConfigurerAdapter {
                 HttpMethod.POST,
                 authenticationPath
             )
+                .antMatchers(
+                        HttpMethod.POST,
+                        "/signup"
+                )
             .antMatchers(HttpMethod.OPTIONS, "/**")
             .and()
             .ignoring()
