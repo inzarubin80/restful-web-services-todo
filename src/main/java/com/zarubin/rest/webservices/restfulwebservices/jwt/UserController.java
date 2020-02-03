@@ -7,7 +7,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@CrossOrigin(origins="http://localhost:3000", maxAge = 3600)
+@CrossOrigin(origins="https://i-todo.herokuapp.com", maxAge = 3600)
 public class UserController {
 
     @Autowired

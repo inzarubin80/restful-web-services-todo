@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 
-@CrossOrigin(origins="http://localhost:3000")
+@CrossOrigin(origins="https://i-todo.herokuapp.com")
 @RestController
 public class TodoJpaResource {
 

@@ -26,7 +26,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-@CrossOrigin(origins="http://localhost:3000", maxAge = 3600)
+@CrossOrigin(origins="https://i-todo.herokuapp.com", maxAge = 3600)
 public class JwtAuthenticationRestController {
 
   @Value("${jwt.http.request.header}")
