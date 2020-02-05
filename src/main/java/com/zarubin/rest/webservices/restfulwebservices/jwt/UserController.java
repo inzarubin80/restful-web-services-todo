@@ -26,7 +26,7 @@ public class UserController {
     public ResponseEntity<?> createUser(@RequestBody JwtTokenRequest authenticationRequest) {
 
         logger.warn("IN USER CONTROLLER" + authenticationRequest.getUsername());
-/*
+
         if (repository.findByUsername(authenticationRequest.getUsername()) == null) {
             User user = new User();
             user.setPassword(passwordEncoder.encode(authenticationRequest.getPassword()));
@@ -39,8 +39,7 @@ public class UserController {
         else {
             return new ResponseEntity<JwtTokenRequest>(authenticationRequest, HttpStatus.BAD_REQUEST);
         }
-        */
-        return new ResponseEntity<JwtTokenRequest>(authenticationRequest, HttpStatus.OK);
+
     };
 }
 
