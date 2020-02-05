@@ -13,11 +13,12 @@ import org.slf4j.LoggerFactory;
 @CrossOrigin(origins="*", maxAge = 3600)
 public class UserController {
 
-    //@Autowired
-    //UserJpaRepository repository;
 
-    //@Autowired
-    //private PasswordEncoder passwordEncoder;
+    @Autowired
+    UserJpaRepository repository;
+
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
