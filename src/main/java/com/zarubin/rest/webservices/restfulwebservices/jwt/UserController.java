@@ -10,9 +10,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 @RestController
-@CrossOrigin(origins="*", maxAge = 3600)
+@CrossOrigin(origins="https://i-todo.herokuapp.com", maxAge = 3600)
 public class UserController {
-
 
     @Autowired
     UserJpaRepository repository;
@@ -25,6 +24,7 @@ public class UserController {
     @RequestMapping(value = "/signup", method = RequestMethod.POST)
     public ResponseEntity<?> createUser(@RequestBody JwtTokenRequest authenticationRequest) {
 
+        logger.warn("IN SIGNUP");
 
         if (repository.findByUsername(authenticationRequest.getUsername()) == null) {
             User user = new User();
