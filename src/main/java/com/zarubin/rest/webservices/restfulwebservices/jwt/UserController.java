@@ -25,7 +25,6 @@ public class UserController {
     @RequestMapping(value = "/signup", method = RequestMethod.POST)
     public ResponseEntity<?> createUser(@RequestBody JwtTokenRequest authenticationRequest) {
 
-        logger.warn("IN USER CONTROLLER" + authenticationRequest.getUsername());
 
         if (repository.findByUsername(authenticationRequest.getUsername()) == null) {
             User user = new User();
