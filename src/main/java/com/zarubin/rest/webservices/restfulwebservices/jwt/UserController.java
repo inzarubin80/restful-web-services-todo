@@ -39,6 +39,7 @@ public class UserController {
             return new ResponseEntity<JwtTokenRequest>(authenticationRequest, HttpStatus.BAD_REQUEST);
         }
         */
-        return null;
-    }
+        return new ResponseEntity<JwtTokenRequest>(authenticationRequest, HttpStatus.OK);
+    };
 }
+
