@@ -6,19 +6,26 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 @RestController
 @CrossOrigin(origins="*", maxAge = 3600)
 public class UserController {
 
-    @Autowired
-    UserJpaRepository repository;
+    //@Autowired
+    //UserJpaRepository repository;
 
-    @Autowired
-    private PasswordEncoder passwordEncoder;
+    //@Autowired
+    //private PasswordEncoder passwordEncoder;
+
+    private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @RequestMapping(value = "/signup", method = RequestMethod.POST)
     public ResponseEntity<?> createUser(@RequestBody JwtTokenRequest authenticationRequest) {
 
+        logger.warn("IN USER CONTROLLER" + authenticationRequest.getUsername());
+/*
         if (repository.findByUsername(authenticationRequest.getUsername()) == null) {
             User user = new User();
             user.setPassword(passwordEncoder.encode(authenticationRequest.getPassword()));
@@ -31,5 +38,7 @@ public class UserController {
         else {
             return new ResponseEntity<JwtTokenRequest>(authenticationRequest, HttpStatus.BAD_REQUEST);
         }
+        */
+        return null;
     }
 }
